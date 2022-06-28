@@ -1,0 +1,122 @@
+html , body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Trispace', sans-serif;
+  height: 150vh;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+
+nav a{
+  cursor: pointer;
+}
+
+
+
+.right-element{
+  width:400px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  position:relative; 
+  right: 30px;
+}
+
+
+
+.right-element a::after{
+  display :block;
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.2s ease-in;
+
+}
+.right-element a:hover::after{
+  width:100%;
+}
+
+/*.right-element a:hover{
+  opacity: 1;
+}
+
+.right-element a{
+  text-decoration:underline;
+  transition: all 0.2s ease-in ;
+  opacity: 0.5;
+
+}*/
+
+
+
+/* Tablette  */
+@media (max-width: 950px){
+  .right-element{
+    width: 50%;
+  }
+}
+
+/* Smartphone */
+
+.smartphone {
+  display: none;
+    margin-right: 30px;
+  position:relative; 
+  right: 30px;
+}
+@media (max-width: 500px){
+  .smartphone {
+  display: block;
+}
+
+  .right-element{
+    position: absolute;
+    top:100%;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    padding: 0; 
+    padding-top: 20px;
+    margin: 0;
+    display: flex;
+    height: 0%;
+    overflow: hidden;
+
+  }
+  .right-element.open{
+    height:300%;
+    transition-property: height;
+    transition-duration: 0.2s;
+  }
+
+   .right-element.open a {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    opacity: 0.6;
+    transition: all 0.3s;
+   }
+
+    .right-element.open a:hover {
+      opacity: 1;
+    }
+
+
+   .right-element a::after{
+    display: none;
+   }
+
+
+}
